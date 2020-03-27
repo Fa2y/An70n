@@ -107,14 +107,15 @@ class Utility(commands.Cog):
                 sw = json.load(f)['swears']
                 f.close()
             authors_name = str(ctx.author)
-            if any((name in authors_name for name in cool_names)):
+            if any((name in authors_name for name in naughty_list)):
                 await ctx.channel.send(authors_name+' nta kharay matahkomch fiya', tts=True)
+                return 0
             if (int(number) > 10):
                 await ctx.channel.send('bzzzfff na9es chwi!', tts=True)
-            if 'akram' in mate:
-                await ctx.channel.send('It\'s akram again!! I should call him KHARAY', tts=True)
-                mate = 'KHARAY'
             else:
+                if '<@!516805045199699969>' in mate:
+                    await ctx.channel.send('It\'s akram again!! I should call him KHARAY', tts=True)
+                    mate = 'KHARAY'
                 for i in range(int(number)):
                     choice = random.choice(sw)
                     choice = choice % mate
