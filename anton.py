@@ -10,17 +10,16 @@ import help_info
 import auth
 
 #Auth is set up like so:
-#auth_token = 'DISCORD TOKEN'
-#conn = "mongodb+srv://MONGODBUSER:PASSWORD@YOURCLUSTER.mongodb.net"
-
+# auth_token = 'discord token'
+# conn = "mongodb+srv://root:blackholE=x=2x=3x@0.0.0.0"
 
 
 client = discord.Client()
-bot = commands.Bot(command_prefix='>')
+bot = commands.Bot(command_prefix='!')
 extensions = ['encoding_decoding', 'cipher', 'ctfs', 'utility']
 bot.remove_command('help')
 blacklisted = []
-cool_names = ['nullpxl', 'Yiggles', 'JohnHammond', 'voidUpdate', 'Michel Ney', 'theKidOfArcrania', 'l14ck3r0x01', 'hasu', 'KFBI'] 
+cool_names = ['th3hpbt'] 
 # This is intended to be able to be circumvented.
 # If you do something like report a bug with the report command (OR GITHUB), e.g, >report "a bug", you might be added to the list!
 
@@ -51,10 +50,10 @@ async def on_message(message):
         choice = random.randint(1, 2)
         
         if choice == 1:
-            await message.channel.send('https://youtube.com/nullpxl')
+            await message.channel.send('my dick')
         
         if choice == 2:
-            await message.channel.send('https://www.youtube.com/user/RootOfTheNull')
+            await message.channel.send('there is no second choice')
     
     await bot.process_commands(message)
 
@@ -78,7 +77,7 @@ async def help(ctx, page=None):
     
     else:
         emb = discord.Embed(description=help_info.help_page, colour=4387968)
-        emb.set_author(name='NullCTF Help')
+        emb.set_author(name='An70n Help')
     
     await ctx.channel.send(embed=emb)
 

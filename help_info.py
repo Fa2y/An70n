@@ -95,9 +95,9 @@ info for all ctf commands
 everything else! (basically misc)
 
 `>report/request "an issue or feature"`
-report an issue, or request a feature for NullCTF, if it is helpful your name will be added to the 'cool names' list!
+report an issue, or request a feature for An70n, if it is helpful your name will be added to the 'cool names' list!
 
 '''
 
 
-src = "https://github.com/NullPxl/NullCTF"
+src = "https://github.com/th3happybit/An70n"
