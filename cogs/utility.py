@@ -78,10 +78,18 @@ class Utility(commands.Cog):
         if choice == 2:
             await ctx.send('tails')
 
-    # @commands.command()
-    # async def randread(self, ctx, *args):
-    #     choice = random.choice(args)
-    #     await ctx.channel.send(choice, tts=True)
+    @commands.command()
+    async def arech(self, ctx, mate, number=1):
+        swears = ['Fuck you %s!','You are gay %s!','%s you are such a disapointment I think you should kill yourself',
+        'Is %s the synonym of a pussy because I pretty much want to fuck you', 'You such a Bitch %s!', 'You such a Pussy %s!',
+        '%s --> Dickhead']
+        if (int(number) > 10):
+            await ctx.channel.send('bzzzfff na9es chwi!', tts=True)
+        else:
+            for i in range(int(number)):
+                choice = random.choice(swears)
+                choice = choice % mate
+                await ctx.channel.send(choice, tts=True)
 
 def setup(bot):
     bot.add_cog(Utility(bot))

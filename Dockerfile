@@ -1,11 +1,13 @@
-FROM python:3.8.2-alpine3.11
+FROM python:latest
 
 WORKDIR /anton
 
 #installing anton
 COPY requirements.txt ./
-RUN pip install --default-timeout=100 -r requirements.txt
+RUN pip install -r requirements.txt
 RUN rm requirements.txt
 
+#copy anton
 COPY . .
+#run anton
 CMD ["python", "anton.py"]
