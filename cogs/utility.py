@@ -89,6 +89,7 @@ class Utility(commands.Cog):
                 f.close()
         except Exception as e:
             await ctx.channel.send('Ta3richa could not be saved!\nFor the reason:\n'+e,tts=True)
+            return 0
         await ctx.channel.send('Ta3richa saved!',tts=True)
 
     @commands.command()
