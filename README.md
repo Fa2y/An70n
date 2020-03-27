@@ -1,10 +1,6 @@
-<img src="https://i.imgur.com/mZ2bVY4.png"/>
+# An70n
 
 >### *A [discord.py](http://discordpy.readthedocs.io/en/latest/) bot focused on providing CTF tools for collaboration in Discord servers (ctftime.org commands, team setup, utilites, etc)!  If you have a feature request, make it a GitHub issue or use the >request "x" command.*
-
-[Invite to your server](https://discordapp.com/oauth2/authorize?client_id=455502163452362753&scope=bot&permissions=268545136)
-\
-[Join the support server](https://discord.gg/yf8E2s8)
 
 #  How to Use
 >This bot has commands for encoding/decoding, ciphers, and other commonly accessed tools during CTFs.  But, the main use for An70n is to easily set up a CTF for your discord server to play as a team.  The following commands listed are probably going to be used the most.
@@ -42,6 +38,9 @@
 ![enter image description here](https://i.imgur.com/2npW7gM.png)
 ---
 >Utility commands
+
+* `!arech [user] [number]` bach t3arech 3la sahbek (number: default == 1).
+
 * `>magicb filetype` Returns the mime and magicbytes of your supplied filetype. Useful for stegonography challenges where a filetype is corrupt.
 
 * `>rot  "a message" <right/left>` Returns all 25 possible rotations for a message with an optional direction (defaults to left).
