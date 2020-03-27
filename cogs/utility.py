@@ -79,8 +79,8 @@ class Utility(commands.Cog):
             await ctx.send('tails')
 
     @commands.command()
-    async def add_swear(self, ctx, new_swear):
-        swear = new_swear.replace('#name#','%s')
+    async def add_swear(self, ctx, *new_swear):
+        swear = " ".join(new_swear).replace('#name#','%s')
         try:
             with open('swears.json','w') as f:
                 sw = json.load(f)
