@@ -19,7 +19,7 @@ bot = commands.Bot(command_prefix='!')
 extensions = ['encoding_decoding', 'cipher', 'ctfs', 'utility']
 bot.remove_command('help')
 blacklisted = []
-cool_names = ['th3hpbt'] 
+cool_names = ['th3hpbt','Fa2y'] 
 # This is intended to be able to be circumvented.
 # If you do something like report a bug with the report command (OR GITHUB), e.g, >report "a bug", you might be added to the list!
 

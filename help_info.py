@@ -34,6 +34,9 @@ utility_help = '''
 `!arech [user] [number]`
 bach t3arech 3la sahbek (number: default == 1).
 
+`!add_swear [swear]`
+To improve the swearing system, the syntax is "You are a total loser #name#"
+
 `!magicb [filetype]`
 return the magicbytes/file header of a supplied filetype.
 

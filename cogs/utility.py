@@ -79,17 +79,37 @@ class Utility(commands.Cog):
             await ctx.send('tails')
 
     @commands.command()
+    async def add_swear(self, ctx, new_swear):
+        swear = new_swear.replace('#name#','%s')
+        try:
+            with open('swears.json','w') as f:
+                sw = json.load(f)
+                sw["swears"].append(swear)
+                json.dump(sw ,f)
+                f.close()
+        except Exception as e:
+            await ctx.channel.send('Ta3richa could not be saved!\nFor the reason:\n'+e,tts=True)
+        await ctx.channel.send('Ta3richa saved!',tts=True)
+
+    @commands.command()
     async def arech(self, ctx, mate, number=1):
-        swears = ['Fuck you %s!','You are gay %s!','%s you are such a disapointment I think you should kill yourself',
-        'Is %s the synonym of a pussy because I pretty much want to fuck you', 'You such a Bitch %s!', 'You such a Pussy %s!',
-        '%s --> Dickhead']
-        if (int(number) > 10):
-            await ctx.channel.send('bzzzfff na9es chwi!', tts=True)
-        else:
-            for i in range(int(number)):
-                choice = random.choice(swears)
-                choice = choice % mate
-                await ctx.channel.send(choice, tts=True)
+        try:
+            with open('swears.json','r') as f:
+                sw = json.load(f)['swears']
+                f.close()
+
+            if (int(number) > 10):
+                await ctx.channel.send('bzzzfff na9es chwi!', tts=True)
+            if 'akram' in mate:
+                await ctx.channel.send('It\'s akram again!! I should call him KHARAY', tts=True)
+                mate = 'KHARAY'
+            else:
+                for i in range(int(number)):
+                    choice = random.choice(sw)
+                    choice = choice % mate
+                    await ctx.channel.send(choice, tts=True)
+        except Exception as e:
+            await ctx.channel.send('I can\'t ne3arech :(\nFor the reason:\n'+e,tts=True)
 
 def setup(bot):
     bot.add_cog(Utility(bot))
