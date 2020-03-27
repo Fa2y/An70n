@@ -40,7 +40,7 @@
 !Utility commands
 
 * `!arech [user] [number]` bach t3arech 3la sahbek (number: default == 1).
-
+* `!add_swear [swear]` To improve the swearing system, the syntax is "You are a total loser #name#".
 * `!magicb filetype` Returns the mime and magicbytes of your supplied filetype. Useful for stegonography challenges where a filetype is corrupt.
 
 * `!rot  "a message" <right/left!` Returns all 25 possible rotations for a message with an optional direction (defaults to left).
