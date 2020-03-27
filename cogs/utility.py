@@ -8,6 +8,8 @@ import random
 import discord
 from discord.ext import commands
 
+
+naughty_list = ["akram09"]
 class Utility(commands.Cog):
 
     def __init__(self, bot):
@@ -80,11 +82,17 @@ class Utility(commands.Cog):
 
     @commands.command()
     async def add_swear(self, ctx, *new_swear):
-        swear = " ".join(new_swear).replace('#name#','%s')
+        swear = " ".join(new_swear)
+        if "#name#" not in swear:
+            await ctx.channel.send('Can\'t find "#name#" in your ta3richa, check `!help utility`',tts=True)
+            return 0
+        swear = swear.replace('#name#','%s')
         try:
-            with open('swears.json','w') as f:
+            with open('swears.json','r') as f:
                 sw = json.load(f)
-                sw["swears"].append(swear)
+                f.close()
+            sw["swears"].append(swear)
+            with open('swears.json','w') as f:
                 json.dump(sw ,f)
                 f.close()
         except Exception as e:
@@ -98,7 +106,9 @@ class Utility(commands.Cog):
             with open('swears.json','r') as f:
                 sw = json.load(f)['swears']
                 f.close()
-
+            authors_name = str(ctx.author)
+            if any((name in authors_name for name in cool_names)):
+                await ctx.channel.send(authors_name+' nta kharay matahkomch fiya', tts=True)
             if (int(number) > 10):
                 await ctx.channel.send('bzzzfff na9es chwi!', tts=True)
             if 'akram' in mate:

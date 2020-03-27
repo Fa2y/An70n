@@ -102,14 +102,14 @@ async def report(ctx, error_report):
 #     await ctx.send(creator_info)
 
 @bot.command()
-async def amicool(ctx):
+async def I_love_you(ctx):
     authors_name = str(ctx.author)
     
     if any((name in authors_name for name in cool_names)):
-        await ctx.send('You are very cool')
+        await ctx.send('Owwwn I love you too, daddy')
     else:
-        await ctx.send('lolno')
-        await ctx.send('Psst, kid.  Want to be cool?  Find an issue and report it or request a feature you think would be cool.')
+        await ctx.send('Roh 9awed madasernich')
+        await ctx.send('You want to be my daddy?  Find an issue and report it or request a feature you think would be cool.')
 
 if __name__ == '__main__':
     sys.path.insert(1, os.getcwd() + '/cogs/')
