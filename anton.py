@@ -32,14 +32,14 @@ cool_names = ['th3hpbt']
 async def on_ready():
     print(('<' + bot.user.name) + ' Online>')
     print(f"discord.py {discord.__version__}\n")
-    await bot.change_presence(activity=discord.Game(name='>help / >report "issue"'))
+    await bot.change_presence(activity=discord.Game(name='!help / !report "issue"'))
 
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("Invalid command passed.  Use >help")
+        await ctx.send("Invalid command passed.  Use !help")
     else:
-        await ctx.send(f"There was an error, sorry!\nIf you think this should be fixed, report it with >report \"what happened\"")
+        await ctx.send(f"There was an error, sorry!\nIf you think this should be fixed, report it with !report \"what happened\"")
     
     print(Style.BRIGHT + Fore.RED + f"Error occured with: {ctx.command}\n{error}\n")
     print(Style.RESET_ALL)
@@ -84,7 +84,7 @@ async def help(ctx, page=None):
 # Bot sends a dm to creator with the name of the user and their request.
 @bot.command()
 async def request(ctx, feature):
-    creator = await bot.fetch_user(230827776637272064)
+    creator = await bot.fetch_user(631148861444063250)
     authors_name = str(ctx.author)
     await creator.send(f''':pencil: {authors_name}: {feature}''')
     await ctx.send(f''':pencil: Thanks, "{feature}" has been requested!''')
@@ -92,7 +92,7 @@ async def request(ctx, feature):
 # Bot sends a dm to creator with the name of the user and their report.
 @bot.command()
 async def report(ctx, error_report):
-    creator = await bot.fetch_user(230827776637272064)
+    creator = await bot.fetch_user(631148861444063250)
     authors_name = str(ctx.author)
     await creator.send(f''':triangular_flag_on_post: {authors_name}: {error_report}''')
     await ctx.send(f''':triangular_flag_on_post: Thanks for the help, "{error_report}" has been reported!''')

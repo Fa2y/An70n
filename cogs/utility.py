@@ -58,7 +58,7 @@ class Utility(commands.Cog):
             filetype = alldata[filetype]['mime']
             await ctx.send(f'''{filetype}: {signs}''')
         except: # if the filetype is not in magicb.json...
-            await ctx.send(f"{filetype} not found :(  If you think this filetype should be included please do `>request \"magicb {filetype}\"`")
+            await ctx.send(f"{filetype} not found :(  If you think this filetype should be included please do `!request \"magicb {filetype}\"`")
 
     @commands.command()
     async def twitter(self, ctx, twituser):
